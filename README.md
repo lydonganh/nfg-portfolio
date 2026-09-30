@@ -12,10 +12,13 @@ Trang này viết cho người **không chuyên code**. Làm theo từng mục l
 
 ## 2. Thiết lập một lần
 
-1. Tạo repo trên GitHub, đặt chế độ **Private** (khuyến nghị — khả năng Netlify deploy được repo private `[Unverified]`, chưa kiểm chứng trong lần bàn giao này).
-2. Tải **toàn bộ nội dung thư mục này** lên repo: GitHub web → *Add file → Upload files* → chọn tất cả → *Commit changes*.
-3. Vào Netlify → *Add new site → Import from Git* → chọn repo vừa tạo.
-4. Xong. `netlify.toml` đã cấu hình sẵn build command `node scripts/validate.js` → **JSON bị lỗi thì deploy fail, bản cũ vẫn live** (không hỏng trang đang chạy).
+- Repo đã tạo sẵn: **https://github.com/lydonganh/nfg-portfolio** (public) — toàn bộ nội dung thư mục này đã nằm trong đó.
+- GitHub Pages đã bật → trang live tại **https://lydonganh.github.io/nfg-portfolio/**.
+- Nếu làm lại từ đầu cho repo khác:
+  1. Tạo repo GitHub, tải **toàn bộ nội dung thư mục này** lên: GitHub web → *Add file → Upload files* → *Commit changes*.
+  2. Vào repo → *Settings → Pages* → *Source: Deploy from a branch* → nhánh `main`, thư mục `/ (root)` → *Save*.
+  3. Chờ ~1-2 phút → trang live ở `https://<tai-khoan>.github.io/<ten-repo>/`.
+- **GitHub Pages không chạy build** → không có bước kiểm tra tự động lúc deploy; trước mỗi commit hãy chạy tay `node scripts/validate.js` (xem mục 6). (File `netlify.toml` vẫn giữ trong repo — nếu sau này chuyển sang Netlify thì build gate `node scripts/validate.js` chạy tự động.)
 
 ## 3. Đăng bài (chỉ chủ site)
 
@@ -23,7 +26,7 @@ Luôn làm trên GitHub web, không cần cài gì:
 
 1. GitHub web → mở file `content/posts.json`.
 2. Bấm nút hình bút (Edit) → thêm/sửa bài (xem bảng trường bên dưới).
-3. *Commit changes* → Netlify tự deploy lại (~1 phút).
+3. *Commit changes* → GitHub Pages tự publish lại (~1-2 phút).
 
 **Bảng mô tả trường của một bài** (mỗi phần tử của mảng `posts.json`):
 
@@ -62,16 +65,20 @@ Lưu ý thêm về `content/profile.json`: cờ `demo: true` → hiện nhãn "B
 
 ## 6. Deploy lỗi thì làm gì
 
-1. Vào Netlify → mục *Deploys* → bấm deploy màu đỏ vừa xảy ra.
-2. Mở *Build log*.
-3. Đọc dòng bắt đầu bằng `❌ …` — đó là lỗi do `scripts/validate.js` chặn lại (JSON sai, thiếu trường, trùng id, đường dẫn ảnh không hợp lệ…).
-4. Sửa `content/*.json` rồi commit lại là deploy sẽ chạy tiếp.
+- GitHub Pages **không có Build log** như Netlify: JSON sai vẫn được đẩy lên, trang sẽ hiện khối "Không tải được dữ liệu" (không mất gì, chỉ cần sửa).
+- Vì vậy **bước bắt buộc trước mỗi commit** — chạy tay ngoài máy:
+  ```
+  node scripts/validate.js
+  ```
+  Phải thấy `✅ …` rồi hãy bấm *Commit changes*. Script bắt được: JSON sai cú pháp, thiếu trường `id`/`type`/`title`, trùng `id`, đường dẫn ảnh không hợp lệ/thiếu file.
+- Lỡ đẩy lỗi rồi: sửa `content/*.json` → chạy lại validate → commit → ~1-2 phút là trang tự hồi.
 
 ## 7. Cảnh báo `draft`
 
 - Bài có `"status": "draft"` sẽ **ẩn trên giao diện** (không hiện ở trang chủ, trang danh sách, không mở qua link trang).
 - Nhưng file `content/posts.json` vẫn được **công khai** — ai có link `.../content/posts.json` vẫn đọc được toàn bộ nội dung bài draft.
 - **Đừng ghi bí mật** (mật khẩu, thông tin nội bộ chưa duyệt) vào bài draft.
+- Repo hiện đang **public** — nếu muốn kín hơn thì chuyển repo sang **Private** ở *Settings → Danger Zone* (lưu ý: GitHub Pages chỉ chạy free với repo public, chuyển Private thì trang sẽ ngừng).
 
 ## 8. Xem thử trên máy
 
