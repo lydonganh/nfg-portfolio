@@ -1,0 +1,168 @@
+[
+  {
+    "id": "trien-khai-f-and-b",
+    "type": "project",
+    "featured": true,
+    "title": "Triển khai S/4HANA Cloud cho doanh nghiệp chế biến thực phẩm",
+    "client": "Doanh nghiệp F&B, nhiều nhà máy",
+    "module": [
+      "QM",
+      "PP"
+    ],
+    "role": "Functional Consultant QM, PP",
+    "period": "2025 – 2026",
+    "system": "S/4HANA Cloud Public Edition",
+    "date": "2026-06-01",
+    "summary": "Chuẩn hoá quy trình kiểm tra chất lượng và lệnh sản xuất trên nhiều plant, thay thế các file Excel rời rạc.",
+    "results": [
+      {
+        "v": "7",
+        "l": "plant"
+      },
+      {
+        "v": "1.200+",
+        "l": "MIC chuyển đổi"
+      },
+      {
+        "v": "40+",
+        "l": "test case"
+      }
+    ],
+    "context": "Mỗi nhà máy tự quản lý chỉ tiêu chất lượng bằng Excel, khó truy vết theo batch và không liên kết với lệnh sản xuất.",
+    "work": [
+      "Chạy workshop fit-to-standard với Key User từng nhà máy",
+      "Thiết kế bộ Inspection Plan, MIC và quy tắc đánh mã dùng chung",
+      "Chuyển đổi dữ liệu qua Migrate Your Data, chạy Simulate trước Migrate",
+      "Viết kịch bản test E2E từ master data đến nhập kho thành phẩm"
+    ],
+    "outcomes": [
+      "Kết quả kiểm tra gắn với từng batch và lệnh sản xuất",
+      "Bộ tài liệu hướng dẫn sử dụng cho từng app"
+    ],
+    "apps": [
+      "Manage Inspection Lots",
+      "Manage Inspection Plans",
+      "Manage Process Orders"
+    ]
+  },
+  {
+    "id": "ewm-nhap-kho",
+    "type": "project",
+    "featured": true,
+    "title": "Kết nối kiểm tra chất lượng với nhập kho EWM",
+    "client": "Doanh nghiệp sản xuất nông sản",
+    "module": [
+      "EWM",
+      "QM"
+    ],
+    "role": "Consultant QM, hỗ trợ EWM",
+    "period": "2024 – 2025",
+    "system": "S/4HANA Cloud Public Edition",
+    "date": "2025-05-01",
+    "summary": "Hàng nhập kho tự sinh lô kiểm tra, chỉ được đưa vào vị trí sử dụng sau khi có quyết định chất lượng.",
+    "results": [
+      {
+        "v": "3",
+        "l": "kho EWM"
+      },
+      {
+        "v": "2",
+        "l": "loại kiểm tra"
+      },
+      {
+        "v": "15",
+        "l": "Key User đào tạo"
+      }
+    ],
+    "context": "Nhập kho và kiểm tra chất lượng chạy tách rời, hàng chưa kiểm tra vẫn có thể bị xuất dùng.",
+    "work": [
+      "Xác định loại kiểm tra phù hợp cho kho do EWM quản lý",
+      "Kiểm thử luồng Inbound Delivery sinh lô kiểm tra",
+      "Đào tạo Key User kho và QA"
+    ],
+    "outcomes": [
+      "Luồng nhập kho có bước kiểm tra chất lượng rõ ràng"
+    ],
+    "apps": [
+      "Manage Inbound Deliveries",
+      "Manage Inspection Lots"
+    ]
+  },
+  {
+    "id": "qm-dinh-kem-file-link",
+    "type": "guide",
+    "featured": true,
+    "title": "Đính kèm file link vào Inspection Lot",
+    "module": [
+      "QM"
+    ],
+    "appName": "Change Inspection Lot",
+    "level": "Cơ bản",
+    "date": "2026-09-30",
+    "summary": "Đính kèm một đường dẫn tài liệu vào Inspection Lot qua Services for Object.",
+    "purpose": "Lưu link tài liệu (COA, biên bản, ảnh…) ngay trên Inspection Lot để người sau tra cứu.",
+    "prerequisites": "Đã có file link .html tạo bằng công cụ Tạo file link đính kèm SAP.",
+    "steps": [
+      {
+        "text": "App: Change Inspection lot",
+        "image": ""
+      },
+      {
+        "text": "App: Change Inspection Lot",
+        "image": ""
+      },
+      {
+        "text": "Services for Object → Attachment List → New → Create Attachment.",
+        "image": ""
+      },
+      {
+        "text": "Vào lại link và mở tài liệu",
+        "image": ""
+      }
+    ]
+  },
+  {
+    "id": "video-usage-decision",
+    "type": "video",
+    "featured": true,
+    "title": "Ghi quyết định sử dụng (Usage Decision) cho lô kiểm tra",
+    "module": [
+      "QM"
+    ],
+    "appName": "Manage Inspection Lots",
+    "level": "Cơ bản",
+    "date": "2026-09-10",
+    "duration": "07:45",
+    "thumbnail": "",
+    "embedUrl": "",
+    "summary": "Nhập kết quả, ghi Usage Decision và kiểm tra tồn kho sau quyết định."
+  },
+  {
+    "id": "video-master-recipe",
+    "type": "video",
+    "featured": true,
+    "title": "Tạo Master Recipe và Production Version",
+    "module": [
+      "PP"
+    ],
+    "appName": "Manage Master Recipes",
+    "level": "Nâng cao",
+    "date": "2026-08-22",
+    "duration": "12:10",
+    "thumbnail": "",
+    "embedUrl": "",
+    "summary": "Khai báo recipe, operation, phase và gắn với BOM qua Production Version."
+  },
+  {
+    "id": "tool-tao-link-sap",
+    "type": "tool",
+    "title": "Tạo file link đính kèm SAP",
+    "module": [
+      "QM"
+    ],
+    "appName": "Change Inspection Lot",
+    "date": "2026-09-30",
+    "summary": "Đóng gói một đường dẫn thành file .html để đính kèm vào chứng từ SAP.",
+    "url": "tools/Tao_Link_Shortcut_SAP.html"
+  }
+]

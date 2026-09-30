@@ -1,0 +1,112 @@
+{
+  "demo": true,
+  "name": "Nguyễn Văn A",
+  "initials": "VA",
+  "title": "SAP S/4HANA Cloud Functional Consultant",
+  "headline": "Tôi giúp doanh nghiệp sản xuất đưa quy trình chất lượng, sản xuất và kho lên SAP S/4HANA Cloud: từ phân tích nghiệp vụ, cấu hình, chuyển đổi dữ liệu đến đào tạo người dùng.",
+  "location": "TP. Hồ Chí Minh",
+  "photo": "",
+  "status": "Đang tham gia dự án",
+  "cvUrl": "",
+  "email": "nguyenvana@example.com",
+  "phone": "",
+  "linkedin": "https://www.linkedin.com/",
+  "about": "Consultant phân hệ QM, PP và EWM trên SAP S/4HANA Cloud Public Edition. Tôi làm việc gần với Key User để hiểu đúng nghiệp vụ trước khi cấu hình, và ưu tiên giải pháp chuẩn của SAP trước khi đề xuất phát triển thêm.",
+  "stats": {
+    "years": 5,
+    "projects": 8
+  },
+  "skills": [
+    {
+      "module": "QM",
+      "color": "--qm",
+      "name": "Quality Management",
+      "points": [
+        "Inspection Plan, MIC, Catalog",
+        "Inspection Lot và Usage Decision",
+        "Kiểm tra định kỳ theo batch"
+      ],
+      "apps": [
+        "Manage Inspection Lots",
+        "Manage Inspection Plans"
+      ]
+    },
+    {
+      "module": "PP",
+      "color": "--pp",
+      "name": "Production Planning & Manufacturing",
+      "points": [
+        "BOM, Master Recipe, Production Version",
+        "MRP và Planned Order",
+        "Process Order: xuất kho, xác nhận, nhập kho"
+      ],
+      "apps": [
+        "Manage Master Recipes",
+        "Manage Process Orders"
+      ]
+    },
+    {
+      "module": "EWM",
+      "color": "--ewm",
+      "name": "Extended Warehouse Management",
+      "points": [
+        "Inbound và Outbound Delivery",
+        "Tích hợp kiểm tra chất lượng khi nhập kho",
+        "Chuyển kho nội bộ"
+      ],
+      "apps": [
+        "Manage Inbound Deliveries",
+        "Warehouse Monitor"
+      ]
+    }
+  ],
+  "activate": [
+    "Explore",
+    "Realize",
+    "Deploy"
+  ],
+  "services": [
+    "Phân tích nghiệp vụ, viết tài liệu BP và FS",
+    "Cấu hình hệ thống và chuyển đổi dữ liệu master",
+    "Kiểm thử SIT/UAT, viết kịch bản test",
+    "Đào tạo Key User, viết tài liệu hướng dẫn sử dụng"
+  ],
+  "experience": [
+    {
+      "period": "2023 – nay",
+      "company": "Công ty tư vấn ABC",
+      "role": "Senior Functional Consultant",
+      "summary": "Phụ trách QM và PP trong các dự án triển khai S/4HANA Cloud Public Edition cho khối sản xuất."
+    },
+    {
+      "period": "2021 – 2023",
+      "company": "Công ty tư vấn ABC",
+      "role": "Functional Consultant",
+      "summary": "Tham gia cấu hình, chuyển đổi dữ liệu và kiểm thử phân hệ QM, EWM."
+    },
+    {
+      "period": "2020 – 2021",
+      "company": "Công ty XYZ",
+      "role": "Business Analyst",
+      "summary": "Phân tích quy trình sản xuất và kho trước khi chuyển lên ERP."
+    }
+  ],
+  "certificates": [
+    {
+      "name": "SAP Certified Associate – S/4HANA Cloud Public Edition (mẫu)",
+      "issuer": "SAP",
+      "year": "2024"
+    }
+  ],
+  "education": [
+    {
+      "school": "Trường Đại học ABC",
+      "degree": "Kỹ thuật công nghiệp",
+      "year": "2020"
+    }
+  ],
+  "languages": [
+    "Tiếng Việt",
+    "Tiếng Anh"
+  ]
+}
