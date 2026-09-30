@@ -83,10 +83,11 @@ rồi mở `http://localhost:8080`.
 - **Double-click `index.html` (mở bằng `file://`) sẽ báo lỗi tải dữ liệu** — bình thường, do trình duyệt chặn đọc file JSON khi mở trực tiếp. Muốn xem phải dùng `npx serve .` như trên.
 - Muốn kiểm tra nhanh dữ liệu có hợp lệ không: `node scripts/validate.js`.
 
-## 9. Card "Công cụ"
+## 9. Card "Công cụ" và link bài hướng dẫn
 
-- Card Công cụ trên trang trỏ tới `tools/Tao_Link_Shortcut_SAP.html`.
-- **File này chưa được kèm trong repo** (bên trong chứa ảnh dữ liệu khách hàng). Nếu chưa thêm file, card sẽ trả **404** khi bấm — muốn hoạt động thì tự thêm file đã làm mờ vào thư mục `tools/`.
+- Card Công cụ (trang chủ + trang Công cụ) và nút "Mở công cụ" trỏ tới **`https://nfg-link-sap.netlify.app/`** (bản đã deploy trên Netlify).
+- Bài hướng dẫn "Đính kèm file link vào Inspection Lot" cũng nhúng trang này qua trường `scribeUrl`.
+- File gốc `tools/Tao_Link_Shortcut_SAP.html` **không kèm trong repo** (chứa ảnh dữ liệu khách hàng). Nếu đổi đường dẫn card về file local khi chưa thêm file, card sẽ trả **404** — muốn chạy local thì tự thêm file đã làm mờ vào thư mục `tools/`.
 
 ## 10. Giữ nguyên footer
 

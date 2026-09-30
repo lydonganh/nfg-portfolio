@@ -119,7 +119,8 @@
         "text": "Vào lại link và mở tài liệu",
         "image": ""
       }
-    ]
+    ],
+    "scribeUrl": "https://nfg-link-sap.netlify.app/"
   },
   {
     "id": "video-usage-decision",
@@ -163,6 +164,6 @@
     "appName": "Change Inspection Lot",
     "date": "2026-09-30",
     "summary": "Đóng gói một đường dẫn thành file .html để đính kèm vào chứng từ SAP.",
-    "url": "tools/Tao_Link_Shortcut_SAP.html"
+    "url": "https://nfg-link-sap.netlify.app/"
   }
 ]
