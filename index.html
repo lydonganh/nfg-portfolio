@@ -345,46 +345,7 @@ footer{max-width:1240px;margin:0 auto;padding:24px 20px 36px;color:var(--faint);
    Toàn bộ nội dung dưới đây là NỘI DUNG MẪU để xem giao diện.
    Thay bằng thông tin thật rồi đặt demo: false trước khi public.
    ===================================================================== */
-const PROFILE = {
-  demo: true,
-  name: "Nguyễn Văn A",
-  initials: "VA",
-  title: "SAP S/4HANA Cloud Functional Consultant",
-  headline: "Tôi giúp doanh nghiệp sản xuất đưa quy trình chất lượng, sản xuất và kho lên SAP S/4HANA Cloud: từ phân tích nghiệp vụ, cấu hình, chuyển đổi dữ liệu đến đào tạo người dùng.",
-  location: "TP. Hồ Chí Minh",
-  photo: "",
-  status: "Đang tham gia dự án",
-  cvUrl: "",
-  email: "nguyenvana@example.com",
-  phone: "",
-  linkedin: "https://www.linkedin.com/",
-  about: "Consultant phân hệ QM, PP và EWM trên SAP S/4HANA Cloud Public Edition. Tôi làm việc gần với Key User để hiểu đúng nghiệp vụ trước khi cấu hình, và ưu tiên giải pháp chuẩn của SAP trước khi đề xuất phát triển thêm.",
-  stats: { years: 5, projects: 8 },
-  skills: [
-    { module: "QM", color: "--qm", name: "Quality Management",
-      points: ["Inspection Plan, MIC, Catalog", "Inspection Lot và Usage Decision", "Kiểm tra định kỳ theo batch"],
-      apps: ["Manage Inspection Lots", "Manage Inspection Plans"] },
-    { module: "PP", color: "--pp", name: "Production Planning & Manufacturing",
-      points: ["BOM, Master Recipe, Production Version", "MRP và Planned Order", "Process Order: xuất kho, xác nhận, nhập kho"],
-      apps: ["Manage Master Recipes", "Manage Process Orders"] },
-    { module: "EWM", color: "--ewm", name: "Extended Warehouse Management",
-      points: ["Inbound và Outbound Delivery", "Tích hợp kiểm tra chất lượng khi nhập kho", "Chuyển kho nội bộ"],
-      apps: ["Manage Inbound Deliveries", "Warehouse Monitor"] }
-  ],
-  activate: ["Explore", "Realize", "Deploy"],   // pha SAP Activate thường tham gia
-  services: ["Phân tích nghiệp vụ, viết tài liệu BP và FS", "Cấu hình hệ thống và chuyển đổi dữ liệu master", "Kiểm thử SIT/UAT, viết kịch bản test", "Đào tạo Key User, viết tài liệu hướng dẫn sử dụng"],
-  experience: [
-    { period: "2023 – nay", company: "Công ty tư vấn ABC", role: "Senior Functional Consultant", summary: "Phụ trách QM và PP trong các dự án triển khai S/4HANA Cloud Public Edition cho khối sản xuất." },
-    { period: "2021 – 2023", company: "Công ty tư vấn ABC", role: "Functional Consultant", summary: "Tham gia cấu hình, chuyển đổi dữ liệu và kiểm thử phân hệ QM, EWM." },
-    { period: "2020 – 2021", company: "Công ty XYZ", role: "Business Analyst", summary: "Phân tích quy trình sản xuất và kho trước khi chuyển lên ERP." }
-  ],
-  certificates: [
-    { name: "SAP Certified Associate – S/4HANA Cloud Public Edition (mẫu)", issuer: "SAP", year: "2024" }
-  ],
-  education: [ { school: "Trường Đại học ABC", degree: "Kỹ thuật công nghiệp", year: "2020" } ],
-  languages: ["Tiếng Việt", "Tiếng Anh"]
-};
-
+let PROFILE = null;
 const ACTIVATE = [
   { k: "Discover", d: "Tìm hiểu giá trị giải pháp" },
   { k: "Prepare",  d: "Chuẩn bị dự án, nhân sự" },
@@ -398,70 +359,7 @@ const ACTIVATE = [
    NỘI DUNG — type: "project" | "video" | "guide" | "tool"
    featured: true → hiện ở trang chủ. Tất cả mục dưới đây là mẫu.
    ===================================================================== */
-const CONTENT = [
-  {
-    id: "trien-khai-f-and-b", type: "project", featured: true,
-    title: "Triển khai S/4HANA Cloud cho doanh nghiệp chế biến thực phẩm",
-    client: "Doanh nghiệp F&B, nhiều nhà máy", module: ["QM", "PP"],
-    role: "Functional Consultant QM, PP", period: "2025 – 2026", system: "S/4HANA Cloud Public Edition",
-    date: "2026-06-01",
-    summary: "Chuẩn hoá quy trình kiểm tra chất lượng và lệnh sản xuất trên nhiều plant, thay thế các file Excel rời rạc.",
-    results: [ { v: "7", l: "plant" }, { v: "1.200+", l: "MIC chuyển đổi" }, { v: "40+", l: "test case" } ],
-    context: "Mỗi nhà máy tự quản lý chỉ tiêu chất lượng bằng Excel, khó truy vết theo batch và không liên kết với lệnh sản xuất.",
-    work: ["Chạy workshop fit-to-standard với Key User từng nhà máy", "Thiết kế bộ Inspection Plan, MIC và quy tắc đánh mã dùng chung", "Chuyển đổi dữ liệu qua Migrate Your Data, chạy Simulate trước Migrate", "Viết kịch bản test E2E từ master data đến nhập kho thành phẩm"],
-    outcomes: ["Kết quả kiểm tra gắn với từng batch và lệnh sản xuất", "Bộ tài liệu hướng dẫn sử dụng cho từng app"],
-    apps: ["Manage Inspection Lots", "Manage Inspection Plans", "Manage Process Orders"]
-  },
-  {
-    id: "ewm-nhap-kho", type: "project", featured: true,
-    title: "Kết nối kiểm tra chất lượng với nhập kho EWM",
-    client: "Doanh nghiệp sản xuất nông sản", module: ["EWM", "QM"],
-    role: "Consultant QM, hỗ trợ EWM", period: "2024 – 2025", system: "S/4HANA Cloud Public Edition",
-    date: "2025-05-01",
-    summary: "Hàng nhập kho tự sinh lô kiểm tra, chỉ được đưa vào vị trí sử dụng sau khi có quyết định chất lượng.",
-    results: [ { v: "3", l: "kho EWM" }, { v: "2", l: "loại kiểm tra" }, { v: "15", l: "Key User đào tạo" } ],
-    context: "Nhập kho và kiểm tra chất lượng chạy tách rời, hàng chưa kiểm tra vẫn có thể bị xuất dùng.",
-    work: ["Xác định loại kiểm tra phù hợp cho kho do EWM quản lý", "Kiểm thử luồng Inbound Delivery sinh lô kiểm tra", "Đào tạo Key User kho và QA"],
-    outcomes: ["Luồng nhập kho có bước kiểm tra chất lượng rõ ràng"],
-    apps: ["Manage Inbound Deliveries", "Manage Inspection Lots"]
-  },
-  {
-    id: "qm-dinh-kem-file-link", type: "guide", featured: true,
-    title: "Đính kèm file link vào Inspection Lot",
-    module: ["QM"], appName: "Change Inspection Lot", level: "Cơ bản", date: "2026-09-30",
-    summary: "Đính kèm một đường dẫn tài liệu vào Inspection Lot qua Services for Object.",
-    purpose: "Lưu link tài liệu (COA, biên bản, ảnh…) ngay trên Inspection Lot để người sau tra cứu.",
-    prerequisites: "Đã có file link .html tạo bằng công cụ Tạo file link đính kèm SAP.",
-    steps: [
-      { text: "App: Change Inspection lot", image: "" },
-      { text: "App: Change Inspection Lot", image: "" },
-      { text: "Services for Object → Attachment List → New → Create Attachment.", image: "" },
-      { text: "Vào lại link và mờ tài liệu", image: "" }
-    ]
-  },
-  {
-    id: "video-usage-decision", type: "video", featured: true,
-    title: "Ghi quyết định sử dụng (Usage Decision) cho lô kiểm tra",
-    module: ["QM"], appName: "Manage Inspection Lots", level: "Cơ bản", date: "2026-09-10", duration: "07:45",
-    thumbnail: "", embedUrl: "",
-    summary: "Nhập kết quả, ghi Usage Decision và kiểm tra tồn kho sau quyết định."
-  },
-  {
-    id: "video-master-recipe", type: "video", featured: true,
-    title: "Tạo Master Recipe và Production Version",
-    module: ["PP"], appName: "Manage Master Recipes", level: "Nâng cao", date: "2026-08-22", duration: "12:10",
-    thumbnail: "", embedUrl: "",
-    summary: "Khai báo recipe, operation, phase và gắn với BOM qua Production Version."
-  },
-  {
-    id: "tool-tao-link-sap", type: "tool",
-    title: "Tạo file link đính kèm SAP", module: ["QM"], appName: "Change Inspection Lot",
-    date: "2026-09-30", summary: "Đóng gói một đường dẫn thành file .html để đính kèm vào chứng từ SAP.",
-    url: "tools/Tao_Link_Shortcut_SAP.html"
-  }
-];
-/* ===================================================================== */
-
+let CONTENT = [];
 const MODCOLOR = { QM: "--qm", PP: "--pp", EWM: "--ewm", MM: "--mm" };
 const cvar = m => `var(${MODCOLOR[m] || "--gen"})`;
 const TYPE = { project: "Dự án", video: "Video", guide: "Bài hướng dẫn", tool: "Công cụ" };
@@ -484,10 +382,6 @@ const fmtDate = d => { const t = new Date(d); return isNaN(t) ? '' : t.toLocaleD
 const byDate = (a, b) => String(b.date).localeCompare(String(a.date));
 const mchips = arr => (arr || []).map(m => `<span class="chip m" style="--c:${cvar(m)}">${esc(m)}</span>`).join('');
 const sampleChip = c => c.sample ? '<span class="chip sample">Dữ liệu mẫu</span>' : '';
-
-document.querySelectorAll('[data-name]').forEach(e => e.textContent = PROFILE.name);
-document.querySelectorAll('[data-initials]').forEach(e => e.textContent = PROFILE.initials);
-document.getElementById('demoFlag').hidden = !PROFILE.demo;
 
 /* ---------- Home ---------- */
 function viewHome(){
@@ -725,6 +619,7 @@ function parseHash(){
   return { parts: path.split('/').filter(Boolean), params: new URLSearchParams(qs || '') };
 }
 function render(){
+  if (!PROFILE) return;
   const { parts, params } = parseHash();
   const r = parts[0] || '';
   let html, nav = r;
@@ -777,7 +672,30 @@ zoom.onclick = () => zoom.style.display = 'none';
 document.addEventListener('keydown', e => { if (e.key === 'Escape') zoom.style.display = 'none'; });
 document.getElementById('yr').textContent = new Date().getFullYear();
 window.addEventListener('hashchange', render);
-render();
+async function boot(){
+  $app.innerHTML = '<div class="empty">Đang tải nội dung…</div>';
+  let profile, posts;
+  try {
+    const [a, b] = await Promise.all([fetch('content/profile.json'), fetch('content/posts.json')]);
+    if (!a.ok) throw new Error('Không tải được content/profile.json (HTTP ' + a.status + ')');
+    if (!b.ok) throw new Error('Không tải được content/posts.json (HTTP ' + b.status + ')');
+    profile = await a.json();
+    posts = await b.json();
+  } catch (e) {
+    $app.innerHTML = '<div class="empty"><h1 style="font-size:24px">Không tải được dữ liệu</h1>'
+      + '<p>' + esc(e.message) + '</p>'
+      + '<p>Không đọc được <code>content/profile.json</code> hoặc <code>content/posts.json</code>.</p>'
+      + '<p>Nếu đang mở file bằng double-click (file:///), trình duyệt chặn fetch. Xem thử bằng: <code>npx serve .</code></p></div>';
+    return;
+  }
+  PROFILE = profile;
+  CONTENT = posts.filter(p => p.status !== 'draft');
+  document.querySelectorAll('[data-name]').forEach(e => e.textContent = PROFILE.name);
+  document.querySelectorAll('[data-initials]').forEach(e => e.textContent = PROFILE.initials);
+  document.getElementById('demoFlag').hidden = !PROFILE.demo;
+  render();
+}
+boot();
 </script>
 </body>
 </html>
